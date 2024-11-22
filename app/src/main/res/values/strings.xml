@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ZakatEase</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string-array name="gold_types">
+        <item>Keep</item>
+        <item>Wear</item>
+    </string-array>
+    <string name="developer_details_title">Developer Details</string>
+    <string name="developer_name">Name: Dania Adriana Bt Ahmad Nazarman</string>
+    <string name="student_id">Student ID: 2022490904</string>
+    <string name="programme_code">Programme Code: UCS240</string>
+    <string name="group">Group: D1UCS2405B</string>
+    <string name="copyright">© 2024 ZakatEase</string>
+    <string name="website">https://zakatease.com</string>
+    <string name="profile_image_description">Developer Picture</string>
+    <string name="toggle_mode">Toggle Mode</string>
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CopyrightActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu"
+        android:layout_gravity="start" />
+
+    <!-- Main Content -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/about_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Copyright Statement -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/about_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/copyrightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="© 2024 ZakatEase. All Rights Reserved.\n\nThis application and its content, including but not limited to text, graphics, logos, icons, images, and software, are the exclusive property of ZakatEase. Unauthorized reproduction, distribution, modification, or use of any content without prior written consent from ZakatEase is strictly prohibited.\n\nAll trademarks, logos, and service marks used or referenced in this application are the property of their respective owners. Their use in this application does not imply any affiliation, sponsorship, or endorsement by their respective owners.\n\nDisclaimer: ZakatEase is intended to assist users in estimating Zakat payments. While we strive for accuracy, users are advised to consult with a certified religious authority or financial advisor for specific guidance regarding Zakat calculations.\n\nFor inquiries or permissions, contact us at:\n\nEmail: support@zakatease.com\nPhone: +123-456-7890"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@android:color/black" />
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

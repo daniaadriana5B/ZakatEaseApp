@@ -1,0 +1,11 @@
+<resources>
+<style name="Base.Theme.ZakatEase" parent="Theme.Material3.DayNight.NoActionBar">
+    <item name="android:windowBackground">@color/darkBackground</item>
+    <item name="colorPrimary">@color/darkPrimary</item>
+    <item name="colorAccent">@color/lightGrayAccent</item>
+    <item name="android:textColorPrimary">@color/lightGrayText</item>
+    <item name="android:statusBarColor">#181818</item>
+</style>
+
+<style name="Theme.ZakatEase" parent="Base.Theme.ZakatEase" />
+</resources>

@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ZakatEase" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:statusBarColor">#5A7446</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:thumbTint">@color/switch_thumb_color</item>
+        <item name="android:trackTint">@color/switch_track_color</item>
+    </style>
+
+    <style name="Theme.ZakatEase" parent="Base.Theme.ZakatEase" />
+</resources>
