@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if ((menuItem.getItemId() == R.id.nav_share)) {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Use ZakatEase Now - https://t.co/app");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Use ZakatEase Now - https://github.com/daniaadriana5B/ZakatEaseApp");
             startActivity(Intent.createChooser(shareIntent, null));
             return true;
         } else if (menuItem.getItemId() == R.id.nav_about) {

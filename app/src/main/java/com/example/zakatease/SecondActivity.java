@@ -2,6 +2,7 @@ package com.example.zakatease;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -68,26 +69,36 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
         calculateButton = findViewById(R.id.calculateButton);
 
         // Set up spinner for gold types
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.gold_types, android.R.layout.simple_spinner_item);
+        // Add a hint as the first item in the spinner
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
+        adapter.add("Choose type of gold"); // Hint
+        adapter.addAll(getResources().getStringArray(R.array.gold_types)); // Add other items
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         goldTypeSpinner.setAdapter(adapter);
 
+        // Modify OnItemSelectedListener to handle hint
         goldTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedType = parent.getItemAtPosition(position).toString();
-                // Set uruf based on gold type
-                if (selectedType.equals("Keep")) {
-                    uruf = 85.0;
-                } else if (selectedType.equals("Wear")) {
-                    uruf = 200.0;
+                if (position == 0) {
+                    // Hint selected, reset uruf
+                    uruf = 0.0;
+                    ((TextView) parent.getChildAt(0)).setTextColor(Color.GRAY); // Gray color for hint
+                } else {
+                    // Handle valid selections
+                    String selectedType = parent.getItemAtPosition(position).toString();
+                    if (selectedType.equals("Keep")) {
+                        uruf = 85.0;
+                    } else if (selectedType.equals("Wear")) {
+                        uruf = 200.0;
+                    }
+                    ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK); // Normal color for valid selection
                 }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                uruf = 0.0;
+                uruf = 0.0; // Default
             }
         });
 
@@ -196,7 +207,7 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             // Share Intent
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Use ZakatEase Now - https://t.co/app");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Use ZakatEase Now - https://github.com/daniaadriana5B/ZakatEaseApp");
             startActivity(Intent.createChooser(shareIntent, null));
             return true;
         }else if (id == R.id.nav_copyrigth) {

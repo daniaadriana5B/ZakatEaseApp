@@ -79,7 +79,7 @@ public class CopyrightActivity extends AppCompatActivity implements NavigationVi
             // Share Intent
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Use ZakatEase Now - https://t.co/app");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Use ZakatEase Now - https://github.com/daniaadriana5B/ZakatEaseApp");
             startActivity(Intent.createChooser(shareIntent, null));
             return true;
         }  else if (id == R.id.nav_about) {
